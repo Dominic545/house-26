@@ -1,1 +1,904 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090c">
+<title>ROOM 26 PENT HOUSE | Abuja 2026</title>
+<meta name="description" content="Dominic cordially invites you to ROOM 26 PENT HOUSE, the ultimate December experience in Abuja.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg:#08090c;
+  --panel:#11141a;
+  --silver:#d9dce2;
+  --muted:#a0a4ad;
+  --white:#f8f8fa;
+  --gold:#c9b58a;
+  --line:rgba(255,255,255,.13);
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html {scroll-behavior:smooth}
+
+body {
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+body:before {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse at 15% 15%,rgba(111,130,157,.18),transparent 35%),
+    radial-gradient(ellipse at 85% 45%,rgba(177,151,111,.13),transparent 38%),
+    linear-gradient(145deg,#08090c,#101217 55%,#08090c);
+}
+
+a {text-decoration:none;color:inherit}
+button,input {font:inherit}
+
+.wrap {
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.brand {
+  font-family:'Orbitron',sans-serif;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.brand span {color:var(--gold)}
+
+.top-label {
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.hero {
+  min-height:690px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 15px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before {
+  content:"26";
+  position:absolute;
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(250px,55vw,650px);
+  font-weight:800;
+  color:rgba(255,255,255,.025);
+  z-index:-1;
+}
+
+.eyebrow {
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+.hero h1 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(45px,10vw,105px);
+  font-weight:800;
+  letter-spacing:-4px;
+  line-height:1.08;
+  background:linear-gradient(110deg,#fff 10%,#aeb4c0 42%,#fff 58%,#a28f70 90%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero h2 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(14px,3vw,23px);
+  letter-spacing:9px;
+  color:#c7cbd2;
+  margin-top:15px;
+}
+
+.host {
+  margin-top:38px;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.host strong {color:var(--gold)}
+
+.hero-copy {
+  color:#b8bbc3;
+  max-width:650px;
+  font-size:15px;
+  line-height:1.9;
+  margin:22px auto 0;
+}
+
+.pill {
+  border:1px solid rgba(201,181,138,.55);
+  border-radius:50px;
+  padding:12px 20px;
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:30px;
+}
+
+.scroll-link {
+  display:inline-block;
+  margin-top:45px;
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:3px;
+  animation:bob 2s infinite;
+}
+
+@keyframes bob {
+  0%,100% {transform:translateY(0)}
+  50% {transform:translateY(7px)}
+}
+
+.section {
+  padding:75px 0;
+  border-top:1px solid var(--line);
+}
+
+.heading {
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.heading small {
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:10px;
+}
+
+.heading h2 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(23px,4vw,38px);
+  margin-top:14px;
+  letter-spacing:1px;
+}
+
+.heading p {
+  color:var(--muted);
+  max-width:620px;
+  margin:14px auto 0;
+  line-height:1.8;
+  font-size:14px;
+}
+
+.greeting {
+  max-width:780px;
+  margin:auto;
+  text-align:center;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.015));
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:38px 25px;
+}
+
+.greeting .royal {
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.greeting h3 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(23px,4vw,34px);
+  margin:18px 0;
+}
+
+.greeting p {
+  color:#b8bbc3;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.name-entry {
+  max-width:460px;
+  margin:27px auto 0;
+}
+
+.name-entry label {
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.name-entry input {
+  width:100%;
+  padding:16px;
+  background:#090a0d;
+  color:white;
+  border:1px solid rgba(201,181,138,.5);
+  border-radius:12px;
+  outline:none;
+  text-align:center;
+}
+
+.name-entry input:focus {
+  border-color:var(--gold);
+  box-shadow:0 0 20px rgba(201,181,138,.13);
+}
+
+.personal {
+  color:var(--gold);
+  font-weight:700;
+  margin-top:18px;
+  min-height:22px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.card {
+  padding:27px 22px;
+  background:linear-gradient(145deg,#191c23,#0e1014);
+  border:1px solid var(--line);
+  border-radius:17px;
+  transition:.3s;
+}
+
+.card:hover {
+  transform:translateY(-5px);
+  border-color:rgba(201,181,138,.5);
+}
+
+.card .number {
+  color:var(--gold);
+  font-family:'Orbitron',sans-serif;
+  font-size:23px;
+  margin-bottom:17px;
+}
+
+.card h3 {
+  font-size:15px;
+  margin-bottom:9px;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+}
+
+.event-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
+  max-width:760px;
+  margin:auto;
+}
+
+.event-item {
+  background:#111319;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:20px;
+}
+
+.event-item small {
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.event-item strong {font-size:14px}
+
+.price-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:17px;
+  max-width:700px;
+  margin:auto;
+}
+
+.price-card {
+  background:linear-gradient(145deg,#1b1e25,#0d0f13);
+  border:1px solid rgba(201,181,138,.4);
+  border-radius:20px;
+  padding:35px 15px;
+  text-align:center;
+  transition:.3s;
+}
+
+.price-card:hover {transform:translateY(-5px)}
+
+.price-card small {
+  color:var(--muted);
+  letter-spacing:3px;
+  font-size:11px;
+}
+
+.price-card h3 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(26px,5vw,40px);
+  color:var(--gold);
+  margin-top:16px;
+}
+
+.price-note {
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:20px;
+}
+
+.big-message {
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  padding:50px 25px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(201,181,138,.035));
+}
+
+.big-message h2 {
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(24px,5vw,43px);
+  line-height:1.45;
+}
+
+.big-message p {
+  max-width:680px;
+  margin:20px auto 0;
+  color:#b8bbc3;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.until {
+  color:var(--gold);
+  font-family:'Orbitron',sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  margin-top:27px;
+}
+
+.note {
+  max-width:760px;
+  margin:25px auto 0;
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
+  line-height:1.8;
+}
+
+.whatsapp-section {
+  text-align:center;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.035));
+}
+
+.whatsapp-section > .wrap > p {
+  color:var(--muted);
+  max-width:620px;
+  margin:15px auto 28px;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.whatsapp-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:18px 27px;
+  border-radius:50px;
+  background:#d8dadd;
+  color:#101216;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+  transition:.25s;
+}
+
+.whatsapp-button:hover {
+  transform:translateY(-4px);
+  background:white;
+  box-shadow:0 10px 35px rgba(255,255,255,.15);
+}
+
+.whatsapp-button svg {
+  width:21px;
+  height:21px;
+}
+
+.actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+  margin-top:26px;
+}
+
+.secondary {
+  background:transparent;
+  color:#eee;
+  border:1px solid var(--line);
+  padding:13px 20px;
+  border-radius:50px;
+  cursor:pointer;
+  font-size:11px;
+  letter-spacing:1px;
+  transition:.2s;
+}
+
+.secondary:hover {border-color:var(--gold)}
+
+footer {
+  border-top:1px solid var(--line);
+  text-align:center;
+  padding:40px 0;
+}
+
+footer strong {
+  font-family:'Orbitron',sans-serif;
+  font-size:14px;
+  letter-spacing:2px;
+}
+
+footer p {
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:13px;
+}
+
+footer .age {color:var(--gold)}
+
+@media(max-width:700px) {
+  .cards {grid-template-columns:repeat(2,1fr)}
+  .hero {min-height:600px}
+  .section {padding:58px 0}
+  .top-label {font-size:8px;letter-spacing:1px}
+  .brand {font-size:11px}
+  .greeting {padding:28px 18px}
+}
+
+@media(max-width:430px) {
+  .cards {gap:9px}
+  .card {padding:18px 13px}
+  .card h3 {font-size:13px}
+  .card p {font-size:11px}
+  .event-grid {gap:8px}
+  .event-item {padding:15px}
+  .event-item strong {font-size:12px}
+  .whatsapp-button {font-size:10px;padding:16px}
+}
+
+@media print {
+  body {background:#08090c!important;color:white!important}
+  .actions,.scroll-link {display:none!important}
+  .section,.hero,.greeting,.card,.event-item,.price-card,.big-message {
+    break-inside:avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="wrap topbar">
+  <div class="brand">ROOM <span>26</span> PENT HOUSE</div>
+  <div class="top-label">ABUJA · DECEMBER 2026</div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="eyebrow">The ultimate end-of-year experience</div>
+  <h1>ROOM 26</h1>
+  <h2>PENT HOUSE</h2>
+
+  <div class="host">Hosted by <strong>DOMINIC</strong></div>
+
+  <p class="hero-copy">
+    A royal greeting to you! Dominic cordially invites you to an
+    exclusive celebration bringing together the big boys and big
+    girls of Abuja for a night of luxury, entertainment, networking
+    and unforgettable memories.
+  </p>
+
+  <div class="pill">DECEMBER 2026 · STRICTLY 18+</div>
+
+  <a href="#invitation" class="scroll-link">DISCOVER THE EXPERIENCE ↓</a>
+</section>
+
+<section class="section" id="invitation">
+<div class="wrap">
+
+  <div class="heading">
+    <small>Your personal invitation</small>
+    <h2>A SPECIAL INVITATION</h2>
+    <p>Personalise your invitation with your guest's name.</p>
+  </div>
+
+  <div class="greeting">
+    <div class="royal">A royal greeting to you</div>
+    <h3>You Are Invited</h3>
+
+    <p>
+      You are specially invited to ROOM 26 PENT HOUSE, an exclusive
+      December celebration designed for people who appreciate great
+      company, amazing entertainment and unforgettable experiences.
+    </p>
+
+    <div class="name-entry">
+      <label for="guestName">Enter guest's name</label>
+      <input id="guestName" type="text" placeholder="Type guest name here">
+      <div class="personal" id="personalGreeting">
+        Your invitation awaits...
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+
+  <div class="heading">
+    <small>More than an ordinary party</small>
+    <h2>THE EXPERIENCE</h2>
+    <p>
+      A major December gathering with guests coming from across Abuja
+      and multiple apartments involved in the celebration.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="number">01</div>
+      <h3>Premium Social Vibes</h3>
+      <p>Meet new people, connect and enjoy an exciting crowd.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">02</div>
+      <h3>Food & Drinks</h3>
+      <p>Plenty of delicious food, drinks and a dinner buffet.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">03</div>
+      <h3>Games & Activities</h3>
+      <p>Exciting games, activities and entertainment.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">04</div>
+      <h3>Adult Entertainment</h3>
+      <p>Adult entertainment subject to venue arrangements and applicable rules.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">05</div>
+      <h3>Business & Networking</h3>
+      <p>Meet people, build connections and showcase your business.</p>
+    </div>
+
+    <div class="card">
+      <div class="number">06</div>
+      <h3>Content & Souvenirs</h3>
+      <p>Capture memorable moments and enjoy special souvenirs.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+
+  <div class="heading">
+    <small>Mark your calendar</small>
+    <h2>EVENT DETAILS</h2>
+  </div>
+
+  <div class="event-grid">
+
+    <div class="event-item">
+      <small>Event</small>
+      <strong>ROOM 26 PENT HOUSE</strong>
+    </div>
+
+    <div class="event-item">
+      <small>Host</small>
+      <strong>Dominic</strong>
+    </div>
+
+    <div class="event-item">
+      <small>Month</small>
+      <strong>December 2026</strong>
+    </div>
+
+    <div class="event-item">
+      <small>Location</small>
+      <strong>Abuja, FCT</strong>
+    </div>
+
+    <div class="event-item">
+      <small>Date</small>
+      <strong>To be announced</strong>
+    </div>
+
+    <div class="event-item">
+      <small>Time</small>
+      <strong>To be announced</strong>
+    </div>
+
+    <div class="event-item">
+      <small>Duration</small>
+      <strong>Until daybreak</strong>
+    </div>
+
+    <div class="event-item">
+      <small>Age restriction</small>
+      <strong>Strictly 18+</strong>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+
+  <div class="heading">
+    <small>Your admission</small>
+    <h2>ENTRY PRICES</h2>
+    <p>Secure your place and follow the official group for ticket information.</p>
+  </div>
+
+  <div class="price-grid">
+
+    <div class="price-card">
+      <small>BOYS / MEN</small>
+      <h3>₦20,000</h3>
+    </div>
+
+    <div class="price-card">
+      <small>GIRLS / LADIES</small>
+      <h3>₦15,000</h3>
+    </div>
+
+  </div>
+
+  <p class="price-note">
+    Confirm ticket and payment arrangements through the official WhatsApp group.
+  </p>
+
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+
+  <div class="big-message">
+    <div class="eyebrow">Abuja, get ready</div>
+
+    <h2>
+      ONE CITY.<br>
+      MULTIPLE APARTMENTS.<br>
+      ONE BIG CELEBRATION.
+    </h2>
+
+    <p>
+      The big boys and big girls of ABJ are coming together this
+      December. Expect a massive gathering of people from across
+      Abuja, with multiple apartments involved to accommodate the
+      crowd and create different party experiences.
+    </p>
+
+    <div class="until">
+      ONE NIGHT · ENDLESS EXPERIENCES · UNTIL DAYBREAK
+    </div>
+  </div>
+
+  <p class="note">
+    Respect for everyone, personal boundaries and consent are expected
+    throughout the celebration. Adult entertainment is subject to
+    venue arrangements and applicable rules.
+  </p>
+
+</div>
+</section>
+
+<section class="section whatsapp-section">
+<div class="wrap">
+
+  <div class="heading">
+    <small>Stay connected</small>
+    <h2>DON'T MISS THE UPDATES</h2>
+  </div>
+
+  <p>
+    Join the official ROOM 26 PENT HOUSE WhatsApp group to receive
+    updates about the confirmed date, apartment locations across Abuja,
+    tickets, entertainment and other important announcements.
+    Don't wait until everyone is talking about it. Be part of the
+    experience from the beginning!
+  </p>
+
+  <a
+    class="whatsapp-button"
+    href="https://chat.whatsapp.com/G9nxe5IaDYuLWGK5MQF1qZ?mode=gi_t"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L0 24l6.5-1.7a11.7 11.7 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4zM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.8 9.8 0 0 1-1.5-5.2c0-5.5 4.5-10 10-10 2.7 0 5.2 1 7.1 2.9a9.9 9.9 0 0 1 2.9 7.1c0 5.5-4.5 10-9.9 10zm5.5-7.5c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.6-.9-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.5s1.1 2.8 1.3 3c.2.2 2.2 3.4 5.3 4.7.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/>
+    </svg>
+    JOIN THE OFFICIAL WHATSAPP GROUP
+  </a>
+
+  <div class="actions">
+
+    <button class="secondary" onclick="shareInvitation()">
+      SHARE INVITATION
+    </button>
+
+    <button class="secondary" onclick="copyInvitation()">
+      COPY INVITATION TEXT
+    </button>
+
+    <button class="secondary" onclick="window.print()">
+      PRINT / SAVE AS PDF
+    </button>
+
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+  <strong>ROOM 26 PENT HOUSE</strong>
+  <p>DECEMBER 2026 · ABUJA, NIGERIA</p>
+  <p class="age">STRICTLY 18+ · RESPECT · CONSENT · GOOD VIBES</p>
+  <p>HOSTED BY DOMINIC</p>
+</div>
+</footer>
+
+<script>
+const guestInput = document.getElementById("guestName");
+const personalGreeting = document.getElementById("personalGreeting");
+
+guestInput.addEventListener("input", function() {
+  const name = this.value.trim();
+
+  personalGreeting.textContent = name
+    ? "A special invitation for " + name + "."
+    : "Your invitation awaits...";
+});
+
+function getInvitationText() {
+  const name = guestInput.value.trim();
+
+  return `ROOM 26 PENT HOUSE
+DECEMBER 2026 | ABUJA
+
+${name ? "A SPECIAL INVITATION FOR " + name.toUpperCase() + "\n\n" : ""}
+DOMINIC CORDIALLY INVITES YOU.
+
+Join the big boys and big girls of Abuja for an exclusive end-of-year celebration.
+
+EXPECT:
+Multiple apartments across Abuja.
+Plenty of food and drinks.
+Dinner buffet.
+Games and entertainment.
+Networking and new connections.
+Business promotion.
+Content creation and souvenirs.
+Party until daybreak.
+
+ADMISSION:
+BOYS: ₦20,000
+GIRLS: ₦15,000
+
+MONTH: DECEMBER 2026
+LOCATION: ABUJA
+DATE: TO BE ANNOUNCED
+TIME: TO BE ANNOUNCED
+STRICTLY 18+.
+
+JOIN THE OFFICIAL WHATSAPP GROUP:
+https://chat.whatsapp.com/G9nxe5IaDYuLWGK5MQF1qZ?mode=gi_t
+
+ROOM 26 PENT HOUSE
+ONE NIGHT. ENDLESS EXPERIENCES. UNTIL DAYBREAK.`;
+}
+
+async function shareInvitation() {
+  const text = getInvitationText();
+
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "ROOM 26 PENT HOUSE",
+        text: text
+      });
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        alert("Sharing was unavailable. Use the copy button instead.");
+      }
+    }
+  } else {
+    copyInvitation();
+  }
+}
+
+async function copyInvitation() {
+  const text = getInvitationText();
+
+  try {
+    await navigator.clipboard.writeText(text);
+    alert("Invitation copied successfully. You can now share it.");
+  } catch (error) {
+    const area = document.createElement("textarea");
+    area.value = text;
+    document.body.appendChild(area);
+    area.select();
+    document.execCommand("copy");
+    area.remove();
+    alert("Invitation copied. You can now paste it.");
+  }
+}
+</script>
+
+</body>
+</html>
+
