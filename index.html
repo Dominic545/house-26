@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#08090c">
 <title>ROOM 26 PENT HOUSE | Abuja 2026</title>
-<meta name="description" content="Dominic cordially invites you to ROOM 26 PENT HOUSE, the ultimate December experience in Abuja.">
+<meta name="description" content="DEEDEE invites you to ROOM 26 PENT HOUSE, the ultimate December experience in Abuja.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap');
@@ -51,6 +50,13 @@ body:before {
 a {text-decoration:none;color:inherit}
 button,input {font:inherit}
 
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline:2px solid var(--gold);
+  outline-offset:4px;
+}
+
 .wrap {
   width:min(1100px,92%);
   margin:auto;
@@ -60,6 +66,7 @@ button,input {font:inherit}
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:15px;
   padding:22px 0;
   border-bottom:1px solid var(--line);
 }
@@ -89,17 +96,21 @@ button,input {font:inherit}
   text-align:center;
   padding:80px 15px;
   position:relative;
+  isolation:isolate;
   overflow:hidden;
 }
 
 .hero:before {
   content:"26";
   position:absolute;
+  inset:50% auto auto 50%;
+  transform:translate(-50%,-50%);
   font-family:'Orbitron',sans-serif;
   font-size:clamp(250px,55vw,650px);
   font-weight:800;
   color:rgba(255,255,255,.025);
   z-index:-1;
+  pointer-events:none;
 }
 
 .eyebrow {
@@ -280,7 +291,7 @@ button,input {font:inherit}
   background:linear-gradient(145deg,#191c23,#0e1014);
   border:1px solid var(--line);
   border-radius:17px;
-  transition:.3s;
+  transition:transform .3s,border-color .3s;
 }
 
 .card:hover {
@@ -334,27 +345,50 @@ button,input {font:inherit}
 
 .price-grid {
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:17px;
-  max-width:700px;
+  max-width:850px;
   margin:auto;
 }
 
 .price-card {
+  position:relative;
+  overflow:hidden;
   background:linear-gradient(145deg,#1b1e25,#0d0f13);
   border:1px solid rgba(201,181,138,.4);
   border-radius:20px;
   padding:35px 15px;
   text-align:center;
-  transition:.3s;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
 }
 
-.price-card:hover {transform:translateY(-5px)}
+.price-card:hover {
+  transform:translateY(-5px);
+  border-color:var(--gold);
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
 
-.price-card small {
-  color:var(--muted);
+.price-card.vip {
+  border-color:rgba(217,220,226,.65);
+  background:linear-gradient(145deg,#292d36,#101217);
+}
+
+.price-card .tier {
+  display:inline-block;
+  color:var(--gold);
   letter-spacing:3px;
   font-size:11px;
+  font-weight:800;
+}
+
+.price-card.vip .tier {color:#f0f1f4}
+
+.price-card .audience {
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:2px;
+  margin-top:14px;
 }
 
 .price-card h3 {
@@ -364,11 +398,22 @@ button,input {font:inherit}
   margin-top:16px;
 }
 
+.price-card.vip h3 {color:#f0f1f4}
+
+.price-card .price-description {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.7;
+  margin-top:12px;
+}
+
 .price-note {
   text-align:center;
   color:var(--muted);
   font-size:12px;
-  margin-top:20px;
+  line-height:1.8;
+  margin:20px auto 0;
+  max-width:650px;
 }
 
 .big-message {
@@ -400,6 +445,7 @@ button,input {font:inherit}
   font-family:'Orbitron',sans-serif;
   font-size:11px;
   letter-spacing:3px;
+  line-height:1.8;
   margin-top:27px;
 }
 
@@ -437,7 +483,7 @@ button,input {font:inherit}
   font-size:12px;
   font-weight:800;
   letter-spacing:1px;
-  transition:.25s;
+  transition:transform .25s,background .25s,box-shadow .25s;
 }
 
 .whatsapp-button:hover {
@@ -449,6 +495,7 @@ button,input {font:inherit}
 .whatsapp-button svg {
   width:21px;
   height:21px;
+  flex-shrink:0;
 }
 
 .actions {
@@ -468,10 +515,13 @@ button,input {font:inherit}
   cursor:pointer;
   font-size:11px;
   letter-spacing:1px;
-  transition:.2s;
+  transition:border-color .2s,background .2s;
 }
 
-.secondary:hover {border-color:var(--gold)}
+.secondary:hover {
+  border-color:var(--gold);
+  background:rgba(255,255,255,.04);
+}
 
 footer {
   border-top:1px solid var(--line);
@@ -489,18 +539,21 @@ footer p {
   color:var(--muted);
   font-size:10px;
   letter-spacing:2px;
+  line-height:1.8;
   margin-top:13px;
 }
 
 footer .age {color:var(--gold)}
 
 @media(max-width:700px) {
-  .cards {grid-template-columns:repeat(2,1fr)}
+  .cards {grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero {min-height:600px}
   .section {padding:58px 0}
-  .top-label {font-size:8px;letter-spacing:1px}
-  .brand {font-size:11px}
+  .top-label {font-size:8px;letter-spacing:1px;text-align:right}
+  .brand {font-size:11px;letter-spacing:1px}
   .greeting {padding:28px 18px}
+  .price-grid {gap:10px}
+  .price-card {padding:27px 10px}
 }
 
 @media(max-width:430px) {
@@ -512,10 +565,26 @@ footer .age {color:var(--gold)}
   .event-item {padding:15px}
   .event-item strong {font-size:12px}
   .whatsapp-button {font-size:10px;padding:16px}
+  .price-card .tier {font-size:10px;letter-spacing:2px}
+  .price-card .audience {font-size:9px;letter-spacing:1px}
+  .price-card .price-description {font-size:11px}
+  .hero h1 {letter-spacing:-2px}
+  .hero h2 {letter-spacing:5px}
+  .eyebrow {letter-spacing:3px}
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {scroll-behavior:auto}
+  *,*::before,*::after {
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
 }
 
 @media print {
   body {background:#08090c!important;color:white!important}
+  body:before {display:none}
   .actions,.scroll-link {display:none!important}
   .section,.hero,.greeting,.card,.event-item,.price-card,.big-message {
     break-inside:avoid;
@@ -538,10 +607,10 @@ footer .age {color:var(--gold)}
   <h1>ROOM 26</h1>
   <h2>PENT HOUSE</h2>
 
-  <div class="host">Hosted by <strong>DOMINIC</strong></div>
+  <div class="host">Hosted by <strong>DEEDEE</strong></div>
 
   <p class="hero-copy">
-    A royal greeting to you! Dominic cordially invites you to an
+    A royal greeting to you! DEEDEE cordially invites you to an
     exclusive celebration bringing together the big boys and big
     girls of Abuja for a night of luxury, entertainment, networking
     and unforgettable memories.
@@ -573,8 +642,8 @@ footer .age {color:var(--gold)}
 
     <div class="name-entry">
       <label for="guestName">Enter guest's name</label>
-      <input id="guestName" type="text" placeholder="Type guest name here">
-      <div class="personal" id="personalGreeting">
+      <input id="guestName" type="text" maxlength="80" autocomplete="name" placeholder="Type guest name here">
+      <div class="personal" id="personalGreeting" aria-live="polite">
         Your invitation awaits...
       </div>
     </div>
@@ -605,32 +674,32 @@ footer .age {color:var(--gold)}
 
     <div class="card">
       <div class="number">02</div>
-      <h3>Food & Drinks</h3>
-      <p>Plenty of delicious food, drinks and a dinner buffet.</p>
+      <h3>Food &amp; Drinks</h3>
+      <p>Food, drinks and a dinner buffet, subject to final arrangements.</p>
     </div>
 
     <div class="card">
       <div class="number">03</div>
-      <h3>Games & Activities</h3>
+      <h3>Games &amp; Activities</h3>
       <p>Exciting games, activities and entertainment.</p>
     </div>
 
     <div class="card">
       <div class="number">04</div>
       <h3>Adult Entertainment</h3>
-      <p>Adult entertainment subject to venue arrangements and applicable rules.</p>
+      <p>Adult entertainment subject to venue arrangements, consent and applicable rules.</p>
     </div>
 
     <div class="card">
       <div class="number">05</div>
-      <h3>Business & Networking</h3>
+      <h3>Business &amp; Networking</h3>
       <p>Meet people, build connections and showcase your business.</p>
     </div>
 
     <div class="card">
       <div class="number">06</div>
-      <h3>Content & Souvenirs</h3>
-      <p>Capture memorable moments and enjoy special souvenirs.</p>
+      <h3>Content &amp; Souvenirs</h3>
+      <p>Capture memorable moments and enjoy souvenirs, subject to arrangements.</p>
     </div>
 
   </div>
@@ -654,7 +723,7 @@ footer .age {color:var(--gold)}
 
     <div class="event-item">
       <small>Host</small>
-      <strong>Dominic</strong>
+      <strong>DEEDEE</strong>
     </div>
 
     <div class="event-item">
@@ -691,31 +760,54 @@ footer .age {color:var(--gold)}
 </div>
 </section>
 
-<section class="section">
+<section class="section" id="prices">
 <div class="wrap">
 
   <div class="heading">
-    <small>Your admission</small>
+    <small>Choose your admission</small>
     <h2>ENTRY PRICES</h2>
-    <p>Secure your place and follow the official group for ticket information.</p>
+    <p>
+      Choose regular or VIP admission. Confirm ticket availability and
+      payment arrangements through the official WhatsApp group.
+    </p>
   </div>
 
   <div class="price-grid">
 
     <div class="price-card">
-      <small>BOYS / MEN</small>
-      <h3>₦20,000</h3>
+      <span class="tier">REGULAR</span>
+      <span class="audience">BOYS / MEN</span>
+      <h3>₦30,000</h3>
+      <p class="price-description">Regular admission</p>
     </div>
 
     <div class="price-card">
-      <small>GIRLS / LADIES</small>
-      <h3>₦15,000</h3>
+      <span class="tier">REGULAR</span>
+      <span class="audience">GIRLS / LADIES</span>
+      <h3>₦20,000</h3>
+      <p class="price-description">Regular admission</p>
+    </div>
+
+    <div class="price-card vip">
+      <span class="tier">VIP ACCESS</span>
+      <span class="audience">BOYS / MEN</span>
+      <h3>₦50,000</h3>
+      <p class="price-description">VIP admission · Subject to confirmation</p>
+    </div>
+
+    <div class="price-card vip">
+      <span class="tier">VIP ACCESS</span>
+      <span class="audience">GIRLS / LADIES</span>
+      <h3>₦30,000</h3>
+      <p class="price-description">VIP admission · Subject to confirmation</p>
     </div>
 
   </div>
 
   <p class="price-note">
-    Confirm ticket and payment arrangements through the official WhatsApp group.
+    Confirm ticket availability, VIP benefits and payment instructions
+    through the official WhatsApp group. Do not send money to an
+    unverified account.
   </p>
 
 </div>
@@ -735,9 +827,10 @@ footer .age {color:var(--gold)}
 
     <p>
       The big boys and big girls of ABJ are coming together this
-      December. Expect a massive gathering of people from across
-      Abuja, with multiple apartments involved to accommodate the
-      crowd and create different party experiences.
+      December. The plan is to bring people from across Abuja together,
+      with multiple apartments involved to accommodate the crowd and
+      create different party experiences. Final arrangements will be
+      announced as they are confirmed.
     </p>
 
     <div class="until">
@@ -766,8 +859,7 @@ footer .age {color:var(--gold)}
     Join the official ROOM 26 PENT HOUSE WhatsApp group to receive
     updates about the confirmed date, apartment locations across Abuja,
     tickets, entertainment and other important announcements.
-    Don't wait until everyone is talking about it. Be part of the
-    experience from the beginning!
+    Be part of the experience from the beginning!
   </p>
 
   <a
@@ -783,20 +875,12 @@ footer .age {color:var(--gold)}
   </a>
 
   <div class="actions">
-
-    <button class="secondary" onclick="shareInvitation()">
-      SHARE INVITATION
-    </button>
-
-    <button class="secondary" onclick="copyInvitation()">
-      COPY INVITATION TEXT
-    </button>
-
-    <button class="secondary" onclick="window.print()">
-      PRINT / SAVE AS PDF
-    </button>
-
+    <button class="secondary" type="button" onclick="shareInvitation()">SHARE INVITATION</button>
+    <button class="secondary" type="button" onclick="copyInvitation()">COPY INVITATION TEXT</button>
+    <button class="secondary" type="button" onclick="window.print()">PRINT / SAVE AS PDF</button>
   </div>
+
+  <p class="price-note">Please check the group for official updates before making payment.</p>
 
 </div>
 </section>
@@ -808,7 +892,7 @@ footer .age {color:var(--gold)}
   <strong>ROOM 26 PENT HOUSE</strong>
   <p>DECEMBER 2026 · ABUJA, NIGERIA</p>
   <p class="age">STRICTLY 18+ · RESPECT · CONSENT · GOOD VIBES</p>
-  <p>HOSTED BY DOMINIC</p>
+  <p>HOSTED BY DEEDEE</p>
 </div>
 </footer>
 
@@ -828,37 +912,43 @@ function getInvitationText() {
   const name = guestInput.value.trim();
 
   return `ROOM 26 PENT HOUSE
-DECEMBER 2026 | ABUJA
+DECEMBER 2026 | ABUJA, FCT
 
-${name ? "A SPECIAL INVITATION FOR " + name.toUpperCase() + "\n\n" : ""}
-DOMINIC CORDIALLY INVITES YOU.
+${name ? "A SPECIAL INVITATION FOR " + name.toUpperCase() + "\n\n" : ""}HOSTED BY DEEDEE.
 
-Join the big boys and big girls of Abuja for an exclusive end-of-year celebration.
+ONE CITY. MULTIPLE APARTMENTS. ONE BIG CELEBRATION.
 
-EXPECT:
-Multiple apartments across Abuja.
-Plenty of food and drinks.
-Dinner buffet.
+Join the big boys and big girls of Abuja for an end-of-year celebration with food, drinks, games, entertainment, networking and unforgettable experiences.
+
+THE EXPERIENCE:
+Multiple apartments across Abuja, subject to final arrangements.
+Food, drinks and dinner buffet, subject to arrangements.
 Games and entertainment.
-Networking and new connections.
-Business promotion.
-Content creation and souvenirs.
-Party until daybreak.
+Networking and business promotion.
+Content creation and souvenirs, subject to arrangements.
+Celebration until daybreak.
 
-ADMISSION:
-BOYS: ₦20,000
-GIRLS: ₦15,000
+ADMISSION PRICES:
+REGULAR BOYS / MEN: ₦30,000
+REGULAR GIRLS / LADIES: ₦20,000
+VIP BOYS / MEN: ₦50,000
+VIP GIRLS / LADIES: ₦30,000
 
+EVENT DETAILS:
 MONTH: DECEMBER 2026
-LOCATION: ABUJA
+LOCATION: ABUJA, FCT
 DATE: TO BE ANNOUNCED
 TIME: TO BE ANNOUNCED
+DURATION: UNTIL DAYBREAK
 STRICTLY 18+.
+
+Respect, personal boundaries and consent are expected from everyone.
 
 JOIN THE OFFICIAL WHATSAPP GROUP:
 https://chat.whatsapp.com/G9nxe5IaDYuLWGK5MQF1qZ?mode=gi_t
 
 ROOM 26 PENT HOUSE
+HOSTED BY DEEDEE
 ONE NIGHT. ENDLESS EXPERIENCES. UNTIL DAYBREAK.`;
 }
 
@@ -873,11 +963,11 @@ async function shareInvitation() {
       });
     } catch (error) {
       if (error.name !== "AbortError") {
-        alert("Sharing was unavailable. Use the copy button instead.");
+        alert("Sharing was unavailable. Please use the copy button instead.");
       }
     }
   } else {
-    copyInvitation();
+    await copyInvitation();
   }
 }
 
@@ -885,20 +975,33 @@ async function copyInvitation() {
   const text = getInvitationText();
 
   try {
-    await navigator.clipboard.writeText(text);
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      throw new Error("Clipboard API unavailable");
+    }
+
     alert("Invitation copied successfully. You can now share it.");
   } catch (error) {
     const area = document.createElement("textarea");
     area.value = text;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.opacity = "0";
     document.body.appendChild(area);
     area.select();
-    document.execCommand("copy");
+
+    const copied = document.execCommand("copy");
     area.remove();
-    alert("Invitation copied. You can now paste it.");
+
+    if (copied) {
+      alert("Invitation copied successfully. You can now paste it.");
+    } else {
+      window.prompt("Copy your invitation text below:", text);
+    }
   }
 }
 </script>
 
 </body>
 </html>
-
